@@ -1,9 +1,31 @@
-<h1>{{post.post_title}}</h1>
-<p>{{post.post_text}}</p>
-<p>posted by {{post.user.username}} on {{post.post_date}}</p>
-<h2>Comments</h2>
+<div>
+  <h1>{{post.post_title}}</h1>
+  <p>posted by {{post.user.username}} on {{post.post_date}}</p>
+  <p>{{post.post_text}}</p>
+  {{#if isPostOwner}}
+  <a href="/api/posts/edit/{{post_id}}">Edit</a>
+  {{/if}}
+  <form class="new-comment">
+    <div class="form-group" id="comment-bar">
+      <input
+        placeholder="Comment:"
+        type="text"
+        class="form-input"
+        id="comment-text"
+      />
+      <input type="hidden" id="post_id" value="{{post_id}}" />
+      <div class="form-group">
+        <button type="submit">Submit</button>
+      </div>
+    </div>
+  </form>
+</div>
 {{#each post.comments}}
-<h3>{{this.user.username}}</h3>
-<p>{{this.comment_text}}</p>
-<p>- {{this.comment_date}}</p>
+  <div
+    id="comment-container">
+    <h3>{{this.user.username}}</h3>
+    <p>{{this.comment_text}}</p>
+    <p>{{dateFormat this.comment_date}}</p>
+  </div>
 {{/each}}
+<script src="/js/newcomment.js"></script>
