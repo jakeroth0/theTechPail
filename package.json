@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "autoprefixer": "^10.4.14",
+    "concurrently": "^6.2.2",
+    "nodemon": "^2.0.20",
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "tailwindcss": "^3.2.7"
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
@@ -20,7 +24,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "seed": "node seeds/index.js"
+    "seed": "node seeds/index.js",
+    "watch": "postcss public/css/style.css -o public/build/tailwind.css --watch",
+    "dev": "concurrently \"npm run watch\" \"npm run start\"", 
+    "build:css": "postcss public/css/style.css -o public/build/tailwind.css"
   },
   "repository": {
     "type": "git",
