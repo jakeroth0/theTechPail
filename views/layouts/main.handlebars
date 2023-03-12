@@ -76,11 +76,20 @@
           </nav>
         </section>
       {{else}}
-        <nav>
-          <ul>
-            <li><a href="/signup">Sign Up</a></li>
-          </ul>
-        </nav>
+        <section id="mobile-nav-login" class="bg-white w-full text-5xl flex flex-col justify-content-center">
+          <div class="flex justify-between items-center h-20 border-b-2 border-b-black">
+            <a href="/" class="text-left text-xl font-semibold pl-9">Tech Pail</a>
+            <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
+              <ul class="hidden">
+                <li><a href="/api/users/profile/{{user_id}}">Profile</a></li>
+                <li><a
+                    id="logoutDesktop"
+                    href="/api/users/logout"
+                  >Logout</a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
       {{/if}}
     </header>
     <main>
