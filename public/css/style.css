@@ -15,7 +15,13 @@
     .purplegradient{
        background: linear-gradient(180deg, #FBE7FD 20.42%, rgba(217, 217, 217, 0) 131.69%);
     }
-   
+    .fontborder {
+        text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
+    }
 }
 
 /* Import Tailwind CSS */

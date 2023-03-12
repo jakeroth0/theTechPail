@@ -6,39 +6,73 @@
     <title>TechPail</title>
     {{! <link rel="stylesheet" href="/public/css/style.css"> }}
     <link rel="stylesheet" href="/build/tailwind.css" />
+    <script src="/js/main.js" defer></script>
   </head>
 
   <body>
     <header>
       <!-- Only display the logout button if the user is logged in -->
       {{#if logged_in}}
-        <div>
-          <button id="hamburger-btn" class="text-3xl md:hidden cursor-pointer">&#9776;</button>
-          <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
-            <h1 class="text-black">
-              <a href="/">TechPail</a>
-            </h1>
-            <ul class="hidden">
-              <li><a href="/api/users/profile/{{user_id}}">Profile</a></li>
-              <li id="logout"><a href="/api/users/logout">Logout</a></li>
-            </ul>
-          </nav>
-        </div>
-        <section id="mobile-menu" class="absolute top-0 bg-white w-full text-5xl flex flex-col justify-content-center">
+        <section id="mobile-nav" class="bg-white w-full text-5xl flex flex-col justify-content-center">
           <div class="flex justify-between items-center h-20 border-b-2 border-b-black">
             <a href="/" class="text-left text-xl font-semibold pl-9">Tech Pail</a>
-          <button class="text-4xl font-light px-6 py-2">
-            &times;
-          </button>
+            <button
+              id="hamburger-btn"
+              class="text-3xl cursor-pointer px-6 py-2"
+            >&#9776;</button>
+            <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
+              <h1 class="text-black">
+                <a href="/">TechPail</a>
+              </h1>
+              <ul class="hidden">
+                <li><a href="/api/users/profile/{{user_id}}">Profile</a></li>
+                <li><a
+                    id="logoutDesktop"
+                    href="/api/users/logout"
+                  >Logout</a></li>
+              </ul>
+            </nav>
+          </div>
+        </section>
+        <section
+          id="mobile-menu"
+          class="absolute top-0 bg-white w-full text-5xl hidden flex-col justify-content-center"
+        >
+          <div
+            class="flex justify-between items-center h-20 border-b-2 border-b-black"
+          >
+            <a href="/" class="text-left text-xl font-semibold pl-9">Tech Pail</a>
+            <button class="text-4xl font-light px-6 py-2">
+              &times;
+            </button>
           </div>
           <nav class="flex flex-col min-h-screen items-center">
-            <a href="#recent-post" class="w-full text-left text-xl font-semibold pl-9 py-14 greengradient hover:opacity-90 border-b-2 border-b-black">Recent Posts</a>
-            <a href="/api/users/profile/{{user_id}}" class="w-full text-left text-xl font-semibold pl-9 py-14 yellowgradient hover:opacity-90 border-b-2 border-b-black">Profile</a>
-            <a href="/api/users/logout" class="w-full text-left text-xl font-semibold pl-9 py-14 orangegradient hover:opacity-90 border-b-2 border-b-black">Logout</a>
-            <a href="/" class="w-full text-left text-xl font-semibold pl-9 py-14 purplegradient hover:opacity-90 border-b-2 border-b-black">New Post</a>
-            <div class="w-full py-16 greengradient border-b-2 border-b-black"></div>
-            <div class="w-full py-16 yellowgradient border-b-2 border-b-black"></div>
-            <div class="w-full py-16 orangegradient border-b-2 border-b-black"></div>
+            <a
+              href="#recent-post"
+              class="w-full text-left text-xl font-semibold pl-9 py-14 greengradient hover:opacity-90 border-b-2 border-b-black"
+            >Recent Posts</a>
+            <a
+              href="/api/users/profile/{{user_id}}"
+              class="w-full text-left text-xl font-semibold pl-9 py-14 yellowgradient hover:opacity-90 border-b-2 border-b-black"
+            >Profile</a>
+            <a
+              href="/api/users/logout"
+              id="logoutMobile"
+              class="w-full text-left text-xl font-semibold pl-9 py-14 orangegradient hover:opacity-90 border-b-2 border-b-black"
+            >Logout</a>
+            <a
+              href="/"
+              class="w-full text-left text-xl font-semibold pl-9 py-14 purplegradient hover:opacity-90 border-b-2 border-b-black"
+            >New Post</a>
+            <div
+              class="w-full py-16 greengradient border-b-2 border-b-black"
+            ></div>
+            <div
+              class="w-full py-16 yellowgradient border-b-2 border-b-black"
+            ></div>
+            <div
+              class="w-full py-16 orangegradient border-b-2 border-b-black"
+            ></div>
           </nav>
         </section>
       {{else}}
