@@ -10,15 +10,25 @@ router.post('/signup', async (req, res) => {
     const userData = await User.create(req.body, {
         hooks: true
     });
-    res.status(200).json(userData);
-    // res.render('signup', {
-    //     user,
-    //     logged_in: true
-    // })
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+      console.log('Successfully signed up and logged in----------------------------');
+      res.redirect('/');
+    });
   } catch (err) {
     res.status(400).json(err);
   }
 });
+//     res.status(200).json(userData);
+//     // res.render('signup', {
+//     //     user,
+//     //     logged_in: true
+//     // })
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
 
 // PUT update a user
 // sending data to find an existing user
@@ -47,7 +57,8 @@ router.post('/login', async (req, res) => {
         const user = userData.get({ plain: true});
         console.log(req.session.user_id);
         req.session.logged_in = true;
-        res.json({ user: userData, message: "You are now logged in!"})
+        res.redirect('/');
+        // res.json({ user: userData, message: "You are now logged in!"})
       });
       
       console.log('after render');

@@ -16,7 +16,7 @@ const signupFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        window.location.replace('/'); // use window.location.replace to trigger a server-side redirect
       } else {
         alert('Failed to log in');
         console.log(req.body)
