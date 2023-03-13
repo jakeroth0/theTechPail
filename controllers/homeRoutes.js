@@ -64,13 +64,19 @@ router.get('/new', withAuth, async (req, res) => {
     res.redirect('/');
 } else {
   try {
+    console.log('get /new______--______---_______-______')
     const userData = await User.findByPk(req.session.user_id);
     const user = userData.get({ plain: true });
+    const user_id =req.session.user_id;
+    console.log(user_id,'------------------')
+    console.log('get___________________________')
   res.render('newpost', {
+    user_id,
     user,
     logged_in: true
   });
 } catch (err) {
+  console.log('MEGA ERROR_________-----___---__-__--_--__')
   res.status(500).json(err);
 }}
 });

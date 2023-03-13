@@ -16,7 +16,7 @@ const newpostFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/#recent-post');
       } else {
         alert('Failed to log in');
         console.log(req.body)
