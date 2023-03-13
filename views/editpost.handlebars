@@ -1,36 +1,50 @@
+<div class="h-screen purplegradient">
 <div>
-  <h1>Edit</h1>
-  <form class="editpost">
-    <div>
+  <h1 class="font-extrabold text-6xl text-[#AAA5D2] fontborder leading-none pt-8 pl-9">edit post</h1>
+  <h2 class="font-normal text-xl leading-none md:text-lg md:leading-8 pt-2 pl-9">Third time's the charm.</h2>
+
+  <form class="editpost flex flex-col pl-9 pt-8">
+
+    <div class="pt-2">
       <div class="hidden" id="post_id">{{post.id}}</div>
-      <label for="post_title">Post Title:</label>
+      <label class="font-normal text-lg" for="post_title">title</label>
       <br />
       <input
         type="text"
-        class="form-input"
+        class="form-input w-10/12"
         id="post_title"
         value="{{post.post_title}}"
       />
     </div>
-    <div>
-      <label for="post_text">Post Content:</label>
-      <br />
-      <input
+
+    <div class="pt-2 flex flex-col h-auto">
+      <label class="font-normal text-lg mb-1" for="post_text">content</label>
+      <textarea
         type="text"
-        class="form-input"
+        class="form-input w-10/12 h-32 resize-none"
         id="post_text"
-        value="{{post.post_text}}"
-      />
+      >{{post.post_text}}</textarea>
     </div>
-    <div class="form-group">
-      <button
+
+    <p class="font-normal text-sm text-[#3E4F53] pt-2 pr-20">{{dateFormat post.post_date}}.</p>
+
+    <div class="form-group flex pt-2">
+
+      <div class="bg-[#61558A] flex pr-1 pb-1 mr-4 w-1/3">
+      <button class="btn btn-primary flex font-medium text-lg text-left bg-[#E7D7E7] text-black py-[.075rem] pl-3 w-full"
         type="update" id="updateBtn"
       >Update</button>
-      <button
+      </div>
+
+      <div class="bg-[#61558A] flex pr-1 pb-1 mr-4 w-1/3">
+      <button class="btn btn-primary flex font-medium text-lg text-left bg-[#E7D7E7] text-black py-[.075rem] pl-3 w-full"
         type="delete" id="deleteBtn"
       >Delete</button>
+      </div>
     </div>
-    <p>Posted by {{post.user.username}} on {{post.post_date}}.</p>
+
+    
+
   </form>
 </div>
 {{#each post.comments}}
@@ -41,5 +55,7 @@
     <p>- {{this.comment_date}}</p>
   </div>
 {{/each}}
+
+</div>
 
 <script src="/js/editpost.js"></script>

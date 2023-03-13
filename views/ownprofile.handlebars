@@ -1,7 +1,14 @@
-<h1>{{user.username}}</h1>
-<p>{{user.user_email}}</p>
+<div class="flex flex-col h-screen yellowgradient">
+<h1 class="font-extrabold text-6xl text-[#E9CA59] fontborder leading-none pt-8 pl-9">{{user.username}}</h1>
+<h2 class="font-normal text-xl leading-none md:text-lg md:leading-8 pt-2 pl-9">{{user.user_email}}</h2>
 {{#each user.posts}}
-<h2>{{this.post_title}} - {{this.post_date}}</h2>
-<a href="/api/posts/edit/{{this.id}}">Edit</a>
-<p>hello</p>
+<div class="flex flex-col pt-6 pl-9">
+<p class="font-medium text-xl">{{this.post_title}}</p>
+
+<div class="flex">
+<p class="font-normal text-xs text-[#3E4F53] pr-20">{{dateFormat this.post_date}}</p>
+<a class="font-normal text-xs text-[#75652C]" href="/api/posts/edit/{{this.id}}">Edit</a>
+</div>
+</div>
 {{/each}}
+</div>
