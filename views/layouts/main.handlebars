@@ -20,7 +20,7 @@
               id="hamburger-btn"
               class="text-3xl cursor-pointer px-6 py-2"
             >&#9776;</button>
-            <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
+            <nav class="hidden space-x-8 text-xl" aria-label="main">
               <h1 class="text-black">
                 <a href="/">TechPail</a>
               </h1>
@@ -36,7 +36,7 @@
         </section>
         <section
           id="mobile-menu"
-          class="absolute top-0 bg-white w-full text-5xl hidden flex-col justify-content-center"
+          class="absolute z-10 top-0 bg-white w-full text-5xl hidden flex-col justify-content-center"
         >
           <div
             class="flex justify-between items-center h-20 border-b-2 border-b-black"
@@ -49,20 +49,20 @@
           <nav class="flex flex-col min-h-screen items-center">
             <a
               href="/#recent-post"
-              class="w-full text-left text-xl font-semibold pl-9 py-14 greengradient hover:opacity-90 border-b-2 border-b-black"
+              class="w-full text-left text-xl font-semibold pl-9 py-14 greengradient hover:opacity-90 border-b-2 border-b-black md:text-5xl md:pl-32"
             >Recent Posts</a>
             <a
               href="/api/users/profile/{{user_id}}"
-              class="w-full text-left text-xl font-semibold pl-9 py-14 yellowgradient hover:opacity-90 border-b-2 border-b-black"
+              class="w-full text-left text-xl font-semibold pl-9 py-14 yellowgradient hover:opacity-90 border-b-2 border-b-black md:text-5xl md:pl-32"
             >Profile</a>
             <a
               href="/api/users/logout"
               id="logoutMobile"
-              class="w-full text-left text-xl font-semibold pl-9 py-14 orangegradient hover:opacity-90 border-b-2 border-b-black"
+              class="w-full text-left text-xl font-semibold pl-9 py-14 orangegradient hover:opacity-90 border-b-2 border-b-black md:text-5xl md:pl-32"
             >Logout</a>
             <a
               href="/new"
-              class="w-full text-left text-xl font-semibold pl-9 py-14 purplegradient hover:opacity-90 border-b-2 border-b-black"
+              class="w-full text-left text-xl font-semibold pl-9 py-14 purplegradient hover:opacity-90 border-b-2 border-b-black md:text-5xl md:pl-32"
             >New Post</a>
             <div
               class="w-full py-16 greengradient border-b-2 border-b-black"
@@ -72,6 +72,15 @@
             ></div>
             <div
               class="w-full py-16 orangegradient border-b-2 border-b-black"
+            ></div>
+            <div
+              class="w-full py-16 purplegradient border-b-2 border-b-black"
+            ></div>
+             <div
+              class="w-full py-16 greengradient border-b-2 border-b-black"
+            ></div>
+            <div
+              class="w-full py-16 yellowgradient border-b-2 border-b-black"
             ></div>
           </nav>
         </section>
