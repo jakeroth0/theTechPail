@@ -7,12 +7,12 @@ const logout = async () => {
   
     if (response.ok) {
       // If successfully logged out, redirect to the login page
-      document.location.replace('/login');
+      window.location.replace('/login');
     } else {
       alert(response.statusText);
     }
   };
   
   document.querySelector('#logoutMobile').addEventListener('click', logout);
-  document.querySelector('#logoutDesktoop').addEventListener('click', logout);
+  document.querySelector('#logoutDesktop').addEventListener('click', logout);
   

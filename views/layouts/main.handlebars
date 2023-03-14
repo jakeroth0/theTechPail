@@ -13,7 +13,7 @@
     <header>
       <!-- Only display the logout button if the user is logged in -->
       {{#if logged_in}}
-        <section id="mobile-nav" class="bg-white w-full text-5xl flex flex-col justify-content-center">
+        <section id="mobile-nav" class="bg-white w-full text-5xl flex flex-col justify-content-center xl:hidden">
           <div class="flex justify-between items-center h-20 border-b-2 border-b-black">
             <a href="/" class="text-left text-xl font-semibold pl-9">Tech Pail</a>
             <button
@@ -24,13 +24,6 @@
               <h1 class="text-black">
                 <a href="/">TechPail</a>
               </h1>
-              <ul class="hidden">
-                <li><a href="/api/users/profile/{{user_id}}">Profile</a></li>
-                <li><a
-                    id="logoutDesktop"
-                    href="/api/users/logout"
-                  >Logout</a></li>
-              </ul>
             </nav>
           </div>
         </section>
@@ -84,20 +77,35 @@
             ></div>
           </nav>
         </section>
+        {{!-- desktop Menu --}}
+        <section class="hidden xl:fixed xl:flex xl:flex-col xl:bg-white z-20 top-0 h-screen w-[148px]">
+          <a href="/" class="flex justify-center items-center h-[16%] border-r-2 border-b-2 border-black">
+            <img class=" absolute bg-white z-40 hover:hidden" src="/assets/logo.svg" alt="">
+            <img class=" absolute  z-30" src="/assets/tpGif.gif" alt="">
+          </a>
+          <a href="/#recent-post" class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-gren">Recent Posts</a>
+          <a href="/api/users/profile/{{user_id}}" class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-yelr">Profile</a>
+          <a href="/new" class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-purp">New Post</a>
+          <a href="/api/users/logout" id="logoutDesktop" class="flex justify-center items-center h-[15%] border-r-2 border-black text-xl font-light hover:bg-orng">Logout</a>
+        </section>
       {{else}}
-        <section id="mobile-nav-login" class="bg-white w-full text-5xl flex flex-col justify-content-center">
+        <section id="mobile-nav-login" class="bg-white w-full text-5xl flex flex-col justify-content-center xl:hidden">
           <div class="flex justify-between items-center h-20 border-b-2 border-b-black">
             <a href="/" class="text-left text-xl font-semibold pl-9">Tech Pail</a>
             <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
-              <ul class="hidden">
-                <li><a href="/api/users/profile/{{user_id}}">Profile</a></li>
-                <li><a
-                    id="logoutDesktop"
-                    href="/api/users/logout"
-                  >Logout</a></li>
-              </ul>
+              
             </nav>
           </div>
+        </section>
+        <section class="hidden xl:fixed xl:flex xl:flex-col xl:bg-white z-20 top-0 h-screen w-[148px]">
+          <a href="/" class="flex justify-center items-center h-[16%] border-r-2 border-b-2 border-black">
+            <img class=" absolute bg-white z-40 hover:hidden" src="/assets/logo.svg" alt="">
+            <img class=" absolute  z-30" src="/assets/tpGif.gif" alt="">
+          </a>
+          <p class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-gren">Hello</p>
+          <p class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-yelr">Bonjour</p>
+          <p class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-purp">Konnichiwa</p>
+          <p class="flex justify-center items-center h-[15%] border-r-2 border-black text-xl font-light hover:bg-orng">Sup</p>
         </section>
       {{/if}}
     </header>
