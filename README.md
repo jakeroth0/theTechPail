@@ -17,7 +17,7 @@
   ![Thumbnail](public/assets/techPailThumbnail.png)
 
   ## Link
-  [Deployed App](heroku.com)
+  [Deployed App](https://sleepy-citadel-09924.herokuapp.com/)
   
   ## Installation
   To install necessary dependencies, run the following command:
