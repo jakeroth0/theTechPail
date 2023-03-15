@@ -6,7 +6,7 @@
   This is a tech blog built with a mySQL database and Sequelize for the object relational mapper. Handlebars.js was used as the template engine and tailwinds css was used to style the site. The express-session npm package is used for authentication. Users can create an account, post blogs, and leave comments.
 
   ## Table of Contents
-  - [Deployed App](#Link)
+  - [Link](#Link)
   - [Installation](#Installation)
   - [Usage](#Usage)
   - [License](#License)
@@ -17,7 +17,7 @@
   ![Thumbnail](public/assets/techPailThumbnail.png)
 
   ## Link
-  [Deployed App](https://sleepy-citadel-09924.herokuapp.com/)
+  [Live App](https://sleepy-citadel-09924.herokuapp.com/)
   
   ## Installation
   To install necessary dependencies, run the following command:
