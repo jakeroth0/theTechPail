@@ -51,7 +51,7 @@
 
 </div>
 
-<div class="md:flex">
+<div class="md:flex md:bg-white md:relative">
   <div class="md:flex flex-col md:grow">
     <div id="recent-post" class="w-full bg-white text-center text-xl font-semibold  pl-9 py-4 border-y-2 border-y-black md:relative md:border-b-0 md:bg-[#E5F0D5] md:text-3xl md:text-left md:pt-8 xl:text-5xl xl:pl-[20%] xl:pt-[5%]">Recent Posts</div>
 
@@ -79,16 +79,59 @@
       </div>
     </div>
   </div>
-  <div class="hidden xl:relative md:w-[10%] md:border-t-2 md:border-black md:flex md:flex-col xl:w-[80px]">
-    <div class=" md:bg-white flex justify-center items-center grow border-l-2 border-b-2 border-black">
-      <div class="transform -rotate-90">
-        <p class="text-xl">Progress</p>
+{{!-- old progress bar --}}
+  <div class="hidden xl:relative md:w-[80px] md:border-t-2 md:border-black md:flex md:flex-col">
+
+    <div class=" flex justify-center items-center h-[80%] border-l-2 border-b-2 border-black bottom-[20%]">
+      <div class="bg-white w-full justify-center items-center flex">
+      
+        <p class="text-xl transform -rotate-90 whitespace-nowrap">Recent Posts</p>
+        {{!-- <div class="relative bg-purp"></div> --}}
+      
       </div>
     </div>
-    <div class="md:bg-[#00A13C] flex justify-center items-center h-[20%] border-l-2 border-black">
+
+    <div class="md:bg-[#00A13C] flex justify-center items-center h-[20%] border-l-2 bottom-0 border-black">
       <div class="transform -rotate-90">
         <a href="/" class="text-xl">Home</a>
       </div>
     </div>
+
   </div>
+
+
+
 </div>
+{{!-- new progress bar --}}
+
+{{!-- <div class="xl:relative">
+  <div
+    class="hidden xl:fixed xl:flex xl:flex-col z-40 top-0 right-0 w-[80px] bg-[#FAF3BA] progress-bar-inner"
+  >
+    <div
+      class="hidden xl:fixed xl:flex xl:flex-col z-20 top-0 right-0 h-[80%] w-[80px]"
+    >
+      <div class="flex items-center grow border-l-2 border-black h-[80%]">
+
+        <div class="transform -rotate-90">
+          <div class="text-xl">Progress</div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <div
+    class="md:bg-white fixed flex justify-center items-center h-[100%] w-[80px] border-l-2 border-black  bottom-0 right-0 z-90"
+  ></div>
+  <div
+    class="md:bg-[#E9CA59] flex justify-center items-center h-[20%] w-[80px] border-l-2 border-t-2 border-black fixed bottom-0 right-0 z-50"
+  >
+    <div class="transform -rotate-90">
+      <a href="/" class="text-xl">Home</a>
+    </div>
+  </div>
+</div> --}}
+
+
+{{!-- from zd --}}
+
