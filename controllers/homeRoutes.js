@@ -3,37 +3,31 @@ const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET route for homepage that shows all posts if the user is logged in
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-      const postData = await Post.findAll();
-      console.log('this is postData')
-      console.log(postData);
+    const postData = await Post.findAll();
+    const posts = postData.map((post) => post.get({ plain: true }));
 
-      const posts = postData.map((post) => post.get({ plain: true}));
-      console.log(`---------------------------------------`)
-      console.log('this is posts, using the post.get({ plain: true}));')
-      console.log(posts);
+    const userData = await User.findAll();
+    const user = userData.map((user) => user.get({ plain: true }));
 
-      // this fetches all users
-      const userData = await User.findAll();
-      const user = userData.map((user) => user.get({ plain: true }));
-      const user_id =req.session.user_id;
+    let currentuser = null;
+    let user_id = null;
 
-      
-      console.log(user_id);
-      const currentuser = await User.findByPk(req.session.user_id);
-      console.log(currentuser.username);
-      console.log('this is currentuser.username---------------');
-      
-      res.render('homepage', {
-          posts,
-          currentuser: currentuser.username,
-          user,
-          user_id,
-          logged_in: true
-      });
+    if (req.session.logged_in) {
+      user_id = req.session.user_id;
+      currentuser = await User.findByPk(user_id);
+    }
+
+    res.render('homepage', {
+      posts,
+      currentuser: currentuser ? currentuser.username : null,
+      user,
+      user_id,
+      logged_in: req.session.logged_in || false,
+    });
   } catch (err) {
-      res.status(500).json(err);
+    res.status(500).json(err);
   }
 });
 

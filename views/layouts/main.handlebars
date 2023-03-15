@@ -92,20 +92,19 @@
         <section id="mobile-nav-login" class="bg-white w-full text-5xl flex flex-col justify-content-center xl:hidden">
           <div class="flex justify-between items-center h-20 border-b-2 border-b-black">
             <a href="/" class="text-left text-xl font-semibold pl-9">Tech Pail</a>
-            <nav class="hidden md:block space-x-8 text-xl" aria-label="main">
-              
-            </nav>
+            <a id="mobileLogout" href="/login" class="text-right block text-xl font-normal pr-9">Log in</a>
           </div>
+
         </section>
         <section class="hidden xl:fixed xl:flex xl:flex-col xl:bg-white z-20 top-0 h-screen w-[148px]">
           <a href="/" class="flex justify-center items-center h-[16%] border-r-2 border-b-2 border-black">
             <img class=" absolute bg-white z-40 hover:hidden" src="/assets/logo.svg" alt="">
             <img class=" absolute  z-30" src="/assets/tpGif.gif" alt="">
           </a>
-          <p class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-gren">Hello</p>
+          <a href="/login" class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-orng">Log in</a>
           <p class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-yelr">Bonjour</p>
           <p class="flex justify-center items-center h-[23%] border-r-2 border-b-2 border-black text-xl font-light hover:bg-purp">Konnichiwa</p>
-          <p class="flex justify-center items-center h-[15%] border-r-2 border-black text-xl font-light hover:bg-orng">Sup</p>
+          <p class="flex justify-center items-center h-[15%] border-r-2 border-black text-xl font-light hover:bg-gren">Sup</p>
         </section>
       {{/if}}
     </header>
@@ -119,3 +118,4 @@
     {{/if}}
   </body>
 </html>
+<script>"/js/main.js"</script>
