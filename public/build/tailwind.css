@@ -529,6 +529,13 @@ video {
 
       position: fixed;
     }
+.post-content {
+  overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Set the number of lines you want to display */
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+}
 .fixed {
   position: fixed;
 }
@@ -851,6 +858,9 @@ video {
 .pr-4 {
   padding-right: 1rem;
 }
+.pr-9 {
+  padding-right: 2.25rem;
+}
 .pt-1 {
   padding-top: 0.25rem;
 }
@@ -877,9 +887,6 @@ video {
 }
 .pt-\[8\%\] {
   padding-top: 8%;
-}
-.pr-9 {
-  padding-right: 2.25rem;
 }
 .text-left {
   text-align: left;
@@ -1041,10 +1048,6 @@ video {
 
   .md\:mb-1 {
     margin-bottom: 0.25rem;
-  }
-
-  .md\:block {
-    display: block;
   }
 
   .md\:flex {
@@ -1352,6 +1355,10 @@ video {
 
   .xl\:pl-\[25\%\] {
     padding-left: 25%;
+  }
+
+  .xl\:pr-32 {
+    padding-right: 8rem;
   }
 
   .xl\:pr-40 {
